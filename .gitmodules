@@ -1,0 +1,3 @@
+[submodule "OpenRTB"]
+	path = OpenRTB
+	url = https://github.com/openrtb/OpenRTB.git
