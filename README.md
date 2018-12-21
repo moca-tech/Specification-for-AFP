@@ -116,7 +116,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 字段名                                                       | 字段类型                      | 字段说明                          |
 | ------------------------------------------------------------ | ----------------------------- | --------------------------------- |
-| status &emsp;&emsp;&emsp;&emsp;&emsp; | 字符串                        | 接口正确响应时为Ok，出错为Fail    |
+| status &emsp;&emsp;&emsp;&emsp; | 字符串 | 接口正确响应时为Ok，出错为Fail   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 | message                                                      | 字符串                        | 当接口出错时，message携带错误信息 |
 | data                                                         | plcmt对象数组, 字段名为plcmts |                                   |
 
@@ -124,14 +124,14 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 字段名                                                       | 字段类型                                                     | 字段说明           |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------ |
-| id&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整型 | placement 广告位ID |
+| id&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整型&emsp; | placement 广告位ID&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 | ads                                                          | ad对象数组                                                   |                    |
 
 4.3 ad对象
 
 | 字段名                                                       | 字段类型                                                     | 字段说明        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------- |
-| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整数                                                         | 广告ID          |
+| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整数&emsp; | 广告ID &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
 | pay_for                                                      | 字符串                                                       | 结算方式CPM/CPC |
 | currency                                                     | 字符串                                                       | 结算货币        |
 | bid                                                          | 浮点数                                                       | 结算价格        |
