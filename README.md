@@ -254,7 +254,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 有效值 | 描述              | 备注         |
 | ------ | ----------------- | ------------ |
-| 1      | Mobile / Tablet   | 优先采用4、5&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
+| 1      &emsp;&emsp;&emsp;| Mobile / Tablet   | 优先采用4、5&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
 | 2      | Personal Computer |              |
 | 3      | Connected TV      |              |
 | 4      | Phone             |              |
@@ -266,7 +266,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 有效值                                                       | 描述                                  |
 | ------------------------------------------------------------ | ------------------------------------- |
-| 0 | Unknown&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
+| 0 &emsp;&emsp;&emsp;| Unknown&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
 | 1                                                            | Ethernet                              |
 | 2                                                            | WiFi                                  |
 | 3                                                            | Cellular Network - Unknown Generation |
