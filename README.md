@@ -11,9 +11,9 @@
     <a href="http://www.moca-tech.net"><strong>Official Site</strong></a>
     <br>
     <br>
-    <a href="http://www.adstailor.com">Adstailor Branding</a>
+    <a href="http://adstailor.com">Adstailor Branding</a>
     ·
-    <a href="http://www.cactiflos.com">Cactiflos Performance</a>
+    <a href="http://cactiflos.moca-tech.com">Cactiflos Performance</a>
   </p>
 
 
@@ -256,4 +256,3 @@
    | 4      | Cellular Network - 2G                 |
    | 5      | Cellular Network - 3G                 |
    | 6      | Cellular Network - 4G                 |
-
