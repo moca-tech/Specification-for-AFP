@@ -114,29 +114,29 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 4.1 响应对象
 
-| 字段名  | 字段类型                      | 字段说明                          |
-| ------- | ----------------------------- | --------------------------------- |
-| status  | 字符串                        | 接口正确响应时为Ok，出错为Fail    |
-| message | 字符串                        | 当接口出错时，message携带错误信息 |
-| data    | plcmt对象数组, 字段名为plcmts |                                   |
+| 字段名                                                       | 字段类型                      | 字段说明                          |
+| ------------------------------------------------------------ | ----------------------------- | --------------------------------- |
+| status &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 字符串                        | 接口正确响应时为Ok，出错为Fail    |
+| message                                                      | 字符串                        | 当接口出错时，message携带错误信息 |
+| data                                                         | plcmt对象数组, 字段名为plcmts |                                   |
 
 4.2 plcmt对象信息
 
-| 字段名 | 字段类型   | 字段说明           |
-| :----- | ---------- | ------------------ |
-| id     | 整型       | placement 广告位ID |
-| ads    | ad对象数组 |                    |
+| 字段名                                                       | 字段类型                                                     | 字段说明           |
+| :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------ |
+| id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 整型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | placement 广告位ID |
+| ads                                                          | ad对象数组                                                   |                    |
 
 4.3 ad对象
 
-| 字段名   | 字段类型                                                     | 字段说明        |
-| -------- | ------------------------------------------------------------ | --------------- |
-| id       | 整数                                                         | 广告ID          |
-| pay_for  | 字符串                                                       | 结算方式CPM/CPC |
-| currency | 字符串                                                       | 结算货币        |
-| bid      | 浮点数                                                       | 结算价格        |
-| expires  | 整数                                                         | 过期时间戳      |
-| adm      | 当广告类型为video时为VAST xml, 详情请参考 [IAB VAST协议](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/); 当广告类型为banner时为html TAG; 当广告类型为native时为native对象, 详情请参考[IAB OpenRTB Native Ad v1.0协议](https://github.com/openrtb/OpenRTB/blob/76a6d25c74a0cc8f15b119549257856acfc62246/OpenRTB-Native-Ads-Specification-1_0-Final.pdf)。 | 广告素材        |
+| 字段名                                                       | 字段类型                                                     | 字段说明        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | --------------- |
+| id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 整数                                                         | 广告ID          |
+| pay_for                                                      | 字符串                                                       | 结算方式CPM/CPC |
+| currency                                                     | 字符串                                                       | 结算货币        |
+| bid                                                          | 浮点数                                                       | 结算价格        |
+| expires                                                      | 整数                                                         | 过期时间戳      |
+| adm                                                          | 当广告类型为video时为VAST xml, 详情请参考 [IAB VAST协议](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/); 当广告类型为banner时为html TAG; 当广告类型为native时为native对象, 详情请参考[IAB OpenRTB Native Ad v1.0协议](https://github.com/openrtb/OpenRTB/blob/76a6d25c74a0cc8f15b119549257856acfc62246/OpenRTB-Native-Ads-Specification-1_0-Final.pdf)。 | 广告素材        |
 
 
 
@@ -264,12 +264,12 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 #### 2.connection type数据连接类型说明
 
-| 有效值 | 描述                                  |
-| ------ | ------------------------------------- |
-| 0      | Unknown                               |
-| 1      | Ethernet                              |
-| 2      | WiFi                                  |
-| 3      | Cellular Network - Unknown Generation |
-| 4      | Cellular Network - 2G                 |
-| 5      | Cellular Network - 3G                 |
-| 6      | Cellular Network - 4G                 |
+| 有效值                                                       | 描述                                  |
+| ------------------------------------------------------------ | ------------------------------------- |
+| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Unknown                               |
+| 1                                                            | Ethernet                              |
+| 2                                                            | WiFi                                  |
+| 3                                                            | Cellular Network - Unknown Generation |
+| 4                                                            | Cellular Network - 2G                 |
+| 5                                                            | Cellular Network - 3G                 |
+| 6                                                            | Cellular Network - 4G                 |
