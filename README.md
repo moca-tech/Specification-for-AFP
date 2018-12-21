@@ -48,7 +48,7 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 ## 开始
 
-1.概念
+1. 概念
 
 媒体 / 流量方(publisher): AFP唯一识别标识publisher_key, 用于api请求时标识身份。publisher_key在与Moca沟通后通过你的客户经理获取。
 
@@ -56,11 +56,11 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
 
-2.申请成为adstailor流量合作伙伴
+2. 申请成为adstailor流量合作伙伴
 
 访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户。
 
-3.广告投放准备
+3. 广告投放准备
 
 成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com )创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
 
@@ -68,17 +68,17 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 ## 接口定义
 
-1.预拉取广告接口
+1. 预拉取广告接口
 
 当有广告展示请求时，客户端调用预拉取广告接口一次性获得一个或多个广告位(placement)的有效广告资源，预先下载广告素材。客户端须在广告有效展示截止时间内完成广告展示，并根据具体广告投放需求上报展示、点击、追踪事件以完成投放计数，从而获得收益。
 
-2.接口信息
+2. 接口信息
 
 请求方法: GET
 请求地址: http://x.adstailor.com/v2/pfad/[publisher_key]/[inventory_id]
 说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
 
-3.请求参数
+3. 请求参数
 
 afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流量方的广告位不是以webview方式展示广告则需要上传设备信息等用户targeting参数。即使媒体 / 流量方的广告位是以webview方式展示广告, 也可以上传请求参数，修正设备信息。
 
@@ -109,7 +109,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 | did            | Hardware device ID 如IMEI                                    | optional    |
 | mac            | mac地址                                                      | optional    |
 
-4.响应信息
+4. 响应信息
 
 - 响应对象
 
@@ -141,10 +141,11 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 ## 接口示例
 
-请求示例
+1. 请求示例
+
 请求地址: http://x.adstailor.com/v2/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
 
-banner响应示例
+2. banner响应示例
 
 ```json
 {
@@ -169,7 +170,7 @@ banner响应示例
 }
 ```
 
-native响应示例
+3. native响应示例
 
 ```json
 {
@@ -217,7 +218,7 @@ native响应示例
 }
 ```
 
-video响应示例
+4. video响应示例
 
 ```json
 {
