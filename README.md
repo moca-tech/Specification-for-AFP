@@ -8,13 +8,14 @@
   <p align="center">
     Mobile Media Revolution.
     <br>
-    <a href="http://www.moca-tech.net"><strong>More »</strong></a>
+    <a href="http://www.moca-tech.net" target="_blank"><strong>More »</strong></a>
     <br>
     <br>
-    <a href="http://adstailor.com">Adstailor</a>
+    <a href="http://www.adstailor.com" target="_blank">Adstailor</a>
     ·
     <a href="mailto:business@moca-tech.net">Business@moca-tech.net</a>
   </p>
+
 
 
 
@@ -48,39 +49,39 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 ## 开始
 
-1. 概念
+1.概念
 
-   媒体 / 流量方(publisher): AFP唯一识别标识publisher_key, 用于api请求时标识身份。publisher_key在与Moca沟通后通过你的客户经理获取。
+媒体 / 流量方(publisher): AFP唯一识别标识publisher_key, 用于api请求时标识身份。publisher_key在与Moca沟通后通过你的客户经理获取。
 
-   广告位库存(inventory):AFP中指publisher所拥有的应用(app)或者站点(Site)。
+广告位库存(inventory):AFP中指publisher所拥有的应用(app)或者站点(Site)。
 
-   广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
+广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
 
-2. 申请成为adstailor流量合作伙伴
+2.申请成为adstailor流量合作伙伴
 
-   访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户。
+访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户。
 
-3. 广告投放准备
+3.广告投放准备
 
-   成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com )创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
+成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com )创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
 
 
 
 ## 接口定义
 
-1. 预拉取广告接口
+1.预拉取广告接口
 
-   当有广告展示请求时，客户端调用预拉取广告接口一次性获得一个或多个广告位(placement)的有效广告资源，预先下载广告素材。客户端须在广告有效展示截止时间内完成广告展示，并根据具体广告投放需求上报展示、点击、追踪事件以完成投放计数，从而获得收益。
+当有广告展示请求时，客户端调用预拉取广告接口一次性获得一个或多个广告位(placement)的有效广告资源，预先下载广告素材。客户端须在广告有效展示截止时间内完成广告展示，并根据具体广告投放需求上报展示、点击、追踪事件以完成投放计数，从而获得收益。
 
-2. 接口信息
+2.接口信息
 
-   请求方法: GET
-   请求地址: http://x.adstailor.com/v2/pfad/[publisher_key]/[inventory_id]
-   说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
+请求方法: GET
+请求地址: http://x.adstailor.com/v2/pfad/[publisher_key]/[inventory_id]
+说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
 
-3. 请求参数
+3.请求参数
 
-   afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流量方的广告位不是以webview方式展示广告则需要上传设备信息等用户targeting参数。即使媒体 / 流量方的广告位是以webview方式展示广告, 也可以上传请求参数，修正设备信息。
+afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流量方的广告位不是以webview方式展示广告则需要上传设备信息等用户targeting参数。即使媒体 / 流量方的广告位是以webview方式展示广告, 也可以上传请求参数，修正设备信息。
 
 | 字段名         | 字段说明                                                     | 必要性      |
 | -------------- | ------------------------------------------------------------ | ----------- |
@@ -109,9 +110,9 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 | did            | Hardware device ID 如IMEI                                    | optional    |
 | mac            | mac地址                                                      | optional    |
 
-4. 响应信息
+4.响应信息
 
-- 响应对象
+4.1 响应对象
 
 | 字段名  | 字段类型                      | 字段说明                          |
 | ------- | ----------------------------- | --------------------------------- |
@@ -119,14 +120,14 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 | message | 字符串                        | 当接口出错时，message携带错误信息 |
 | data    | plcmt对象数组, 字段名为plcmts |                                   |
 
-- plcmt对象信息
+4.2 plcmt对象信息
 
 | 字段名 | 字段类型   | 字段说明           |
 | ------ | ---------- | ------------------ |
 | id     | 整型       | placement 广告位ID |
 | ads    | ad对象数组 |                    |
 
-- ad对象
+4.3 ad对象
 
 | 字段名   | 字段类型                                                     | 字段说明        |
 | -------- | ------------------------------------------------------------ | --------------- |
@@ -141,11 +142,11 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 ## 接口示例
 
-1. 请求示例
+1.请求示例
 
-   请求地址: http://x.adstailor.com/v2/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
+请求地址: http://x.adstailor.com/v2/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
 
-2. banner响应示例
+2.banner响应示例
 
 ```json
 {
@@ -170,7 +171,7 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 }
 ```
 
-3. native响应示例
+3.native响应示例
 
 ```json
 {
@@ -218,7 +219,7 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 }
 ```
 
-4. video响应示例
+4.video响应示例
 
 ```json
 {
@@ -249,26 +250,26 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 ## 附录
 
-1. device type 设备类型说明
+1.device type 设备类型说明
 
-   | 有效值 | 描述              | 备注         |
-   | ------ | ----------------- | ------------ |
-   | 1      | Mobile / Tablet   | 优先采用4、5 |
-   | 2      | Personal Computer |              |
-   | 3      | Connected TV      |              |
-   | 4      | Phone             |              |
-   | 5      | Tablet            |              |
-   | 6      | Connected Device  |              |
-   | 7      | Set Top Box       |              |
+| 有效值 | 描述              | 备注         |
+| ------ | ----------------- | ------------ |
+| 1      | Mobile / Tablet   | 优先采用4、5 |
+| 2      | Personal Computer |              |
+| 3      | Connected TV      |              |
+| 4      | Phone             |              |
+| 5      | Tablet            |              |
+| 6      | Connected Device  |              |
+| 7      | Set Top Box       |              |
 
-2. connection type数据连接类型说明
+2.connection type数据连接类型说明
 
-   | 有效值 | 描述                                  |
-   | ------ | ------------------------------------- |
-   | 0      | Unknown                               |
-   | 1      | Ethernet                              |
-   | 2      | WiFi                                  |
-   | 3      | Cellular Network - Unknown Generation |
-   | 4      | Cellular Network - 2G                 |
-   | 5      | Cellular Network - 3G                 |
-   | 6      | Cellular Network - 4G                 |
+| 有效值 | 描述                                  |
+| ------ | ------------------------------------- |
+| 0      | Unknown                               |
+| 1      | Ethernet                              |
+| 2      | WiFi                                  |
+| 3      | Cellular Network - Unknown Generation |
+| 4      | Cellular Network - 2G                 |
+| 5      | Cellular Network - 3G                 |
+| 6      | Cellular Network - 4G                 |
