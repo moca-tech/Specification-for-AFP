@@ -46,82 +46,84 @@
 
 ## 开始
 
-1. 概念
-   媒体 / 流量方(publisher): AFP唯一识别标识publisher_key, 用于api请求时标识身份。publisher_key在与Moca沟通后通过你的客户经理获取。
-   广告位库存(inventory):AFP中指publisher所拥有的应用(app)或者站点(Site)。
-   广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
-2. 申请成为adstailor流量合作伙伴
-   访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户。
-3. 广告投放准备
-   成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com )创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
+1.概念
+媒体 / 流量方(publisher): AFP唯一识别标识publisher_key, 用于api请求时标识身份。publisher_key在与Moca沟通后通过你的客户经理获取。
+广告位库存(inventory):AFP中指publisher所拥有的应用(app)或者站点(Site)。
+广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
+
+2.申请成为adstailor流量合作伙伴
+访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户。
+
+3.广告投放准备
+成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com )创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
 
 
 
 ## 接口定义
 
-1. 预拉取广告接口
-   当有广告展示请求时，客户端调用预拉取广告接口一次性获得一个或多个广告位(placement)的有效广告资源，预先下载广告素材。客户端须在广告有效展示截止时间内完成广告展示，并根据具体广告投放需求上报展示、点击、追踪事件以完成投放计数，从而获得收益。
+1.预拉取广告接口
+当有广告展示请求时，客户端调用预拉取广告接口一次性获得一个或多个广告位(placement)的有效广告资源，预先下载广告素材。客户端须在广告有效展示截止时间内完成广告展示，并根据具体广告投放需求上报展示、点击、追踪事件以完成投放计数，从而获得收益。
 
-2. 接口信息
-   请求方法: GET
-   请求地址: http://x.adstailor.com/v2/pfad/[publisher_key]/[inventory_id]
-   说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
+2.接口信息
+请求方法: GET
+请求地址: http://x.adstailor.com/v2/pfad/[publisher_key]/[inventory_id]
+说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
 
-3. 请求参数
-   afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流量方的广告位不是以webview方式展示广告则需要上传设备信息等用户targeting参数。即使媒体 / 流量方的广告位是以webview方式展示广告, 也可以上传请求参数，修正设备信息。
+3.请求参数
+afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流量方的广告位不是以webview方式展示广告则需要上传设备信息等用户targeting参数。即使媒体 / 流量方的广告位是以webview方式展示广告, 也可以上传请求参数，修正设备信息。
 
-   | 字段名         | 字段说明                                                     | 必要性      |
-   | -------------- | ------------------------------------------------------------ | ----------- |
-   | plcmt          | Ad Placement广告位, 多个广告位用半角逗号","分隔, 缺省表示该广告位库存下的所有广告位。广告位库存和广告位需要预先在AFP后台添加并设置有效。 | optional    |
-   | w              | 广告位宽度修正值,当w / h都有值的时候生效, 覆盖原广告位宽高,仅此次生效, 当广告位类型为native时, w / h 只覆盖主图片的宽高, icon / logo 宽高比不变。 | optional    |
-   | h              | 广告位高度修正值,当w / h都有值的时候生效, 覆盖原广告位宽高,仅此次生效, 当广告位类型为native时, w / h 只覆盖主图片的宽高, icon / logo 宽高比不变。 | optional    |
-   | ua             | 用户的User-Agent                                             | recommended |
-   | devicetype     | 用户设备类型, 枚举类型, 见附录A                              | recommended |
-   | make           | 用户设备的制造商                                             | recommended |
-   | model          | 用户的设备型号                                               | recommended |
-   | os             | 用户设备的操作系统                                           | recommended |
-   | osv            | 用户设备的操作系统版本号                                     | recommended |
-   | hwv            | 用户设备的型号版本                                           | recommended |
-   | language       | 设备语言, 请使用ISO-639-1-alpha-2标准                        | recommended |
-   | carrier        | 设备的网络运营商                                             | recommended |
-   | connectiontype | 设备的网络连接类型, 枚举类型, 参见附录B                      | recommended |
-   | ip             | 设备ip地址, 缺省时尝试获取x-forwarded-for, remote_addr       | recommended |
-   | lat            | Latitude 维度, 范围-90.0到+90.0                              | recommended |
-   | lon            | Longitude 经度, 范围-180到+180                               | recommended |
-   | yob            | 出生年份, 如1990                                             | optional    |
-   | gender         | 用户性别, M代表male, F代表female, O代表第三性别, 不确定请缺省 | optional    |
-   | keywords       | 关键词, 搜索、兴趣爱好、行为等关键词                         | optional    |
-   | gaid           | Google Advertising ID 针对安卓设备                           | recommended |
-   | idfa           | Advertising Identifier 针对iOS设备                           | recommended |
-   | dpid           | Platform device ID 如Android ID                              | recommended |
-   | did            | Hardware device ID 如IMEI                                    | optional    |
-   | mac            | mac地址                                                      | optional    |
+| 字段名         | 字段说明                                                     | 必要性      |
+| -------------- | ------------------------------------------------------------ | ----------- |
+| plcmt          | Ad Placement广告位, 多个广告位用半角逗号","分隔, 缺省表示该广告位库存下的所有广告位。广告位库存和广告位需要预先在AFP后台添加并设置有效。 | optional    |
+| w              | 广告位宽度修正值,当w / h都有值的时候生效, 覆盖原广告位宽高,仅此次生效, 当广告位类型为native时, w / h 只覆盖主图片的宽高, icon / logo 宽高比不变。 | optional    |
+| h              | 广告位高度修正值,当w / h都有值的时候生效, 覆盖原广告位宽高,仅此次生效, 当广告位类型为native时, w / h 只覆盖主图片的宽高, icon / logo 宽高比不变。 | optional    |
+| ua             | 用户的User-Agent                                             | recommended |
+| devicetype     | 用户设备类型, 枚举类型, 见附录A                              | recommended |
+| make           | 用户设备的制造商                                             | recommended |
+| model          | 用户的设备型号                                               | recommended |
+| os             | 用户设备的操作系统                                           | recommended |
+| osv            | 用户设备的操作系统版本号                                     | recommended |
+| hwv            | 用户设备的型号版本                                           | recommended |
+| language       | 设备语言, 请使用ISO-639-1-alpha-2标准                        | recommended |
+| carrier        | 设备的网络运营商                                             | recommended |
+| connectiontype | 设备的网络连接类型, 枚举类型, 参见附录B                      | recommended |
+| ip             | 设备ip地址, 缺省时尝试获取x-forwarded-for, remote_addr       | recommended |
+| lat            | Latitude 维度, 范围-90.0到+90.0                              | recommended |
+| lon            | Longitude 经度, 范围-180到+180                               | recommended |
+| yob            | 出生年份, 如1990                                             | optional    |
+| gender         | 用户性别, M代表male, F代表female, O代表第三性别, 不确定请缺省 | optional    |
+| keywords       | 关键词, 搜索、兴趣爱好、行为等关键词                         | optional    |
+| gaid           | Google Advertising ID 针对安卓设备                           | recommended |
+| idfa           | Advertising Identifier 针对iOS设备                           | recommended |
+| dpid           | Platform device ID 如Android ID                              | recommended |
+| did            | Hardware device ID 如IMEI                                    | optional    |
+| mac            | mac地址                                                      | optional    |
 
-4. 响应信息
+4.响应信息
 
-   | 字段名  | 字段类型                      | 字段说明                          |
-   | ------- | ----------------------------- | --------------------------------- |
-   | status  | 字符串                        | 接口正确响应时为Ok，出错为Fail    |
-   | message | 字符串                        | 当接口出错时，message携带错误信息 |
-   | data    | plcmt对象数组, 字段名为plcmts |                                   |
+| 字段名  | 字段类型                      | 字段说明                          |
+| ------- | ----------------------------- | --------------------------------- |
+| status  | 字符串                        | 接口正确响应时为Ok，出错为Fail    |
+| message | 字符串                        | 当接口出错时，message携带错误信息 |
+| data    | plcmt对象数组, 字段名为plcmts |                                   |
 
-   plcmt对象信息
+​	plcmt对象信息
 
-   | 字段名 | 字段类型   | 字段说明           |
-   | ------ | ---------- | ------------------ |
-   | id     | 整型       | placement 广告位ID |
-   | ads    | ad对象数组 |                    |
+| 字段名 | 字段类型   | 字段说明           |
+| ------ | ---------- | ------------------ |
+| id     | 整型       | placement 广告位ID |
+| ads    | ad对象数组 |                    |
 
-   ad对象
+​	ad对象
 
-   | 字段名   | 字段类型                                                     | 字段说明        |
-   | -------- | ------------------------------------------------------------ | --------------- |
-   | id       | 整数                                                         | 广告ID          |
-   | pay_for  | 字符串                                                       | 结算方式CPM/CPC |
-   | currency | 字符串                                                       | 结算货币        |
-   | bid      | 浮点数                                                       | 结算价格        |
-   | expires  | 整数                                                         | 过期时间戳      |
-   | adm      | 当广告类型为video时为VAST xml, 详情请参考 [IAB VAST协议](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/); 当广告类型为banner时为html TAG; 当广告类型为native时为native对象, 详情请参考[IAB OpenRTB Native Ad v1.0协议](https://github.com/openrtb/OpenRTB/blob/76a6d25c74a0cc8f15b119549257856acfc62246/OpenRTB-Native-Ads-Specification-1_0-Final.pdf)。 | 广告素材        |
+| 字段名   | 字段类型                                                     | 字段说明        |
+| -------- | ------------------------------------------------------------ | --------------- |
+| id       | 整数                                                         | 广告ID          |
+| pay_for  | 字符串                                                       | 结算方式CPM/CPC |
+| currency | 字符串                                                       | 结算货币        |
+| bid      | 浮点数                                                       | 结算价格        |
+| expires  | 整数                                                         | 过期时间戳      |
+| adm      | 当广告类型为video时为VAST xml, 详情请参考 [IAB VAST协议](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/); 当广告类型为banner时为html TAG; 当广告类型为native时为native对象, 详情请参考[IAB OpenRTB Native Ad v1.0协议](https://github.com/openrtb/OpenRTB/blob/76a6d25c74a0cc8f15b119549257856acfc62246/OpenRTB-Native-Ads-Specification-1_0-Final.pdf)。 | 广告素材        |
 
 
 
