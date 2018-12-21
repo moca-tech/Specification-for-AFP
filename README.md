@@ -8,13 +8,14 @@
   <p align="center">
     Mobile Media Revolution.
     <br>
-    <a href="http://www.moca-tech.net"><strong>Official Site</strong></a>
+    <a href="http://www.moca-tech.net"><strong>More »</strong></a>
     <br>
     <br>
-    <a href="http://adstailor.com">Adstailor Branding</a>
+    <a href="http://adstailor.com">Adstailor</a>
     ·
-    <a href="http://cactiflos.moca-tech.com">Cactiflos Performance</a>
+    <a href="mailto:business@moca-tech.net">Business@moca-tech.net</a>
   </p>
+
 
 
 
@@ -50,9 +51,9 @@
    广告位库存(inventory):AFP中指publisher所拥有的应用(app)或者站点(Site)。
    广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
 2. 申请成为adstailor流量合作伙伴
-   访问adstailor.com，填写注册申请或拨打+8602111111111,我们的商务经理会在第一时间协助你开通账户。
+   访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户。
 3. 广告投放准备
-   成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com)创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
+   成为Adstailor流量合作伙伴后，可以通过AFP管理平台(http://admin.adstailor.com )创建广告位库存(inventory)和广告位(placement)。至此已经完成广告投放的准备工作，接下来只要接入AFP广告投放接口就可以实现广告投放和收益预览。AFP平台还提供丰富的广告过滤选项，投放信息报表和收益报表等功能。
 
 
 
@@ -126,107 +127,107 @@
 
 ## 接口示例
 
-1. 请求示例
-   请求地址: http://x.adstailor.com/v2/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
+请求示例
+请求地址: http://x.adstailor.com/v2/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
 
-2. banner响应示例
+banner响应示例
 
-   ```json
-   {
-       "status": "Ok",
-       "data": {
-           "plcmts": [
-               {
-                   "id": 101,
-                   "ads": [
-                       {
-                           "id": 2263,
-                           "pay_for": "cpm",
-                           "currency": "USD",
-                           "bid": 1.2,
-                           "expires": 1577923140,
-                           "adm": "<span onclick=\"i=document.createElement('iframe');i.width=0;i.scrolling='no';i.height=0;;i.name='adstc';i.style='position:absolute;top:-15000px;left:-15000px';i.src='http://x.adstailor.com/clk/pfad;pubid=101;invid=113/145;tagid=145;adt=b;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/206cc617-44d6-49e8-b8a7-02fede4384a8/adst;206cc617-44d6-49e8-b8a7-02fede4384a8;2;1;adid=2263;cid=1445;crid=2263;exp=1577923140?url=';document.body.append(i)\"><html>sdfsfsdf</html><iframe width=\"0\" scrolling=\"no\" height=\"0\" frameborder=\"0\" src=\"http://x.adstailor.com/pxl/pfad;pubid=101;invid=113/145;tagid=145;adt=b;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/206cc617-44d6-49e8-b8a7-02fede4384a8/adst;206cc617-44d6-49e8-b8a7-02fede4384a8;2;1;adid=2263;cid=1445;crid=2263;exp=1577923140?url=\" style=\"position:absolute;top:-15000px;left:-15000px\" vspace=\"0\" hspace=\"0\" marginwidth=\"0\" marginheight=\"0\" allowtransparency=\"true\" name=\"adsti\"></iframe></span>"
-                       }
-                   ]
-               }
-           ]
-       }
-   }
-   ```
+```json
+{
+    "status": "Ok",
+    "data": {
+        "plcmts": [
+            {
+                "id": 101,
+                "ads": [
+                    {
+                        "id": 2263,
+                        "pay_for": "cpm",
+                        "currency": "USD",
+                        "bid": 1.2,
+                        "expires": 1577923140,
+                        "adm": "<span onclick=\"i=document.createElement('iframe');i.width=0;i.scrolling='no';i.height=0;;i.name='adstc';i.style='position:absolute;top:-15000px;left:-15000px';i.src='http://x.adstailor.com/clk/pfad;pubid=101;invid=113/145;tagid=145;adt=b;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/206cc617-44d6-49e8-b8a7-02fede4384a8/adst;206cc617-44d6-49e8-b8a7-02fede4384a8;2;1;adid=2263;cid=1445;crid=2263;exp=1577923140?url=';document.body.append(i)\"><html>sdfsfsdf</html><iframe width=\"0\" scrolling=\"no\" height=\"0\" frameborder=\"0\" src=\"http://x.adstailor.com/pxl/pfad;pubid=101;invid=113/145;tagid=145;adt=b;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/206cc617-44d6-49e8-b8a7-02fede4384a8/adst;206cc617-44d6-49e8-b8a7-02fede4384a8;2;1;adid=2263;cid=1445;crid=2263;exp=1577923140?url=\" style=\"position:absolute;top:-15000px;left:-15000px\" vspace=\"0\" hspace=\"0\" marginwidth=\"0\" marginheight=\"0\" allowtransparency=\"true\" name=\"adsti\"></iframe></span>"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
 
-3. native响应示例
+native响应示例
 
-   ```json
-   {
-       "status": "Ok",
-       "data": {
-           "plcmts": [
-               {
-                   "id": 144,
-                   "ads": [
-                       {
-                           "id": 1908,
-                           "pay_for": "cpm",
-                           "currency": "USD",
-                           "bid": 0.6,
-                           "expires": 1577946600,
-                           "adm": {
-                               "native": {
-                                   "assets": [
-                                       {
-                                           "id": 1,
-                                           "img": {
-                                               "url": "http://stor.adstailor.com/m/1001/53356235424efe29e8db.jpg",
-                                               "w": 720,
-                                               "h": 1280
-                                           }
-                                       }
-                                   ],
-                                   "link": {
-                                       "url": "http://xxx.com",
-                                       "clicktrackers": [
-                                           "http://localhost/clk/pfad;pubid=101;invid=113/144;tagid=144;adt=n;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=0.6;acur=USD/b81a8f3e-5bbc-405a-ac72-1c2a0912d21a/adst;b81a8f3e-5bbc-405a-ac72-1c2a0912d21a;1;1;adid=1908;cid=1001;crid=1908;exp=1577946600?url="
-                                       ]
-                                   },
-                                   "imptrackers": [
-                                       "http://xxx.com",
-                                       "http://localhost/pxl/pfad;pubid=101;invid=113/144;tagid=144;adt=n;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=0.6;acur=USD/b81a8f3e-5bbc-405a-ac72-1c2a0912d21a/adst;b81a8f3e-5bbc-405a-ac72-1c2a0912d21a;1;1;adid=1908;cid=1001;crid=1908;exp=1577946600?url="
-                                   ]
-                               }
-                           }
-                       }
-                   ]
-               }
-           ]
-       }
-   }
-   ```
+```json
+{
+    "status": "Ok",
+    "data": {
+        "plcmts": [
+            {
+                "id": 144,
+                "ads": [
+                    {
+                        "id": 1908,
+                        "pay_for": "cpm",
+                        "currency": "USD",
+                        "bid": 0.6,
+                        "expires": 1577946600,
+                        "adm": {
+                            "native": {
+                                "assets": [
+                                    {
+                                        "id": 1,
+                                        "img": {
+                                            "url": "http://stor.adstailor.com/m/1001/53356235424efe29e8db.jpg",
+                                            "w": 720,
+                                            "h": 1280
+                                        }
+                                    }
+                                ],
+                                "link": {
+                                    "url": "http://xxx.com",
+                                    "clicktrackers": [
+                                        "http://localhost/clk/pfad;pubid=101;invid=113/144;tagid=144;adt=n;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=0.6;acur=USD/b81a8f3e-5bbc-405a-ac72-1c2a0912d21a/adst;b81a8f3e-5bbc-405a-ac72-1c2a0912d21a;1;1;adid=1908;cid=1001;crid=1908;exp=1577946600?url="
+                                    ]
+                                },
+                                "imptrackers": [
+                                    "http://xxx.com",
+                                    "http://localhost/pxl/pfad;pubid=101;invid=113/144;tagid=144;adt=n;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=0.6;acur=USD/b81a8f3e-5bbc-405a-ac72-1c2a0912d21a/adst;b81a8f3e-5bbc-405a-ac72-1c2a0912d21a;1;1;adid=1908;cid=1001;crid=1908;exp=1577946600?url="
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
 
-4. video响应示例
+video响应示例
 
-   ```json
-   {
-       "status": "Ok",
-       "message": "",
-       "data": {
-           "plcmts": [
-               {
-                   "id": 133,
-                   "ads": [
-                       {
-                           "id": 2798,
-                           "pay_for": "cpm",
-                           "currency": "USD",
-                           "bid": 1.2,
-                           "expires": 1577923140,
-                           "adm": "<VAST version=\"2.0\"><Ad><InLine><AdTitle></AdTitle><Impression><![CDATA[https://ad.doubleclick.net/ddm/trackimp/N34304.3446215SLIM_MILK/B21952205.233919222;dc_trk_aid=431418538;dc_trk_cid=108363155;ord=1545385364;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=]]></Impression><Impression id=\"moca-it\"><![CDATA[http://localhost/pxl/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?url=]]></Impression><Creatives><Creative><Linear><Duration>00:00:18</Duration><TrackingEvents><Tracking event=\"creativeView\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=1&url=]]></Tracking><Tracking event=\"start\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=2&url=]]></Tracking><Tracking event=\"firstQuartile\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=3&url=]]></Tracking><Tracking event=\"midpoint\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=4&url=]]></Tracking><Tracking event=\"thirdQuartile\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=5&url=]]></Tracking><Tracking event=\"complete\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=6&url=]]></Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[https://ad.doubleclick.net/ddm/trackclk/N34304.3446215SLIM_MILK/B21952205.233919222;dc_trk_aid=431418538;dc_trk_cid=108363155;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=]]></ClickThrough><ClickTracking id=\"moca-ct\"><![CDATA[http://localhost/clk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?url=]]></ClickTracking></VideoClicks><MediaFiles><MediaFile delivery=\"\" type=\"video/mp4\" width=\"0\" height=\"0\"><![CDATA[http://stor.adstailor.com/cr/slimmilk1.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives><Description></Description><Survey></Survey></InLine></Ad></VAST>"
-                       }
-                   ]
-               }
-           ]
-       }
-   }
-   ```
+```json
+{
+    "status": "Ok",
+    "message": "",
+    "data": {
+        "plcmts": [
+            {
+                "id": 133,
+                "ads": [
+                    {
+                        "id": 2798,
+                        "pay_for": "cpm",
+                        "currency": "USD",
+                        "bid": 1.2,
+                        "expires": 1577923140,
+                        "adm": "<VAST version=\"2.0\"><Ad><InLine><AdTitle></AdTitle><Impression><![CDATA[https://ad.doubleclick.net/ddm/trackimp/N34304.3446215SLIM_MILK/B21952205.233919222;dc_trk_aid=431418538;dc_trk_cid=108363155;ord=1545385364;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=]]></Impression><Impression id=\"moca-it\"><![CDATA[http://localhost/pxl/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?url=]]></Impression><Creatives><Creative><Linear><Duration>00:00:18</Duration><TrackingEvents><Tracking event=\"creativeView\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=1&url=]]></Tracking><Tracking event=\"start\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=2&url=]]></Tracking><Tracking event=\"firstQuartile\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=3&url=]]></Tracking><Tracking event=\"midpoint\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=4&url=]]></Tracking><Tracking event=\"thirdQuartile\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=5&url=]]></Tracking><Tracking event=\"complete\"><![CDATA[http://localhost/trk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?ev=6&url=]]></Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[https://ad.doubleclick.net/ddm/trackclk/N34304.3446215SLIM_MILK/B21952205.233919222;dc_trk_aid=431418538;dc_trk_cid=108363155;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=]]></ClickThrough><ClickTracking id=\"moca-ct\"><![CDATA[http://localhost/clk/pfad;pubid=111;invid=109/133;tagid=133;adt=v;=::1;did=;devmk=;devmd=;os=Other;crr=;connt=0;gdr=;agegrp=;apri=1.2;acur=USD/939646e6-8939-4887-ab0e-666dfc9bbf74/adst;939646e6-8939-4887-ab0e-666dfc9bbf74;2;1;adid=2798;cid=1445;crid=2798;exp=1577923140?url=]]></ClickTracking></VideoClicks><MediaFiles><MediaFile delivery=\"\" type=\"video/mp4\" width=\"0\" height=\"0\"><![CDATA[http://stor.adstailor.com/cr/slimmilk1.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives><Description></Description><Survey></Survey></InLine></Ad></VAST>"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
 
 
 
