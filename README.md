@@ -124,7 +124,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 字段名                                                       | 字段类型                                                     | 字段说明           |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------ |
-| id&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整型&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | placement 广告位ID  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| id&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整型&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | placement 广告位ID  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 | ads                                                          | ad对象数组                                                   |                    |
 
 4.3 ad对象
