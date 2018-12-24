@@ -116,7 +116,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 字段名                                                       | 字段类型                      | 字段说明                          |
 | ------------------------------------------------------------ | ----------------------------- | --------------------------------- |
-| status &emsp;&emsp;&emsp;&emsp; | 字符串&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 接口正确响应时为Ok，出错为Fail   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| status &emsp;&emsp;&emsp;&emsp; | 字符串&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 接口正确响应时为Ok，出错为Fail   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 | message                                                      | 字符串                        | 当接口出错时，message携带错误信息 |
 | data                                                         | plcmt对象数组, 字段名为plcmts |                                   |
 
