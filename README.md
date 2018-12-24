@@ -124,14 +124,14 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 字段名                                                       | 字段类型                                                     | 字段说明           |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------ |
-| id&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整型&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | placement 广告位ID  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 整型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | placement 广告位ID  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | ads                                                          | ad对象数组                                                   |                    |
 
 4.3 ad对象
 
 | 字段名                                                       | 字段类型                                                     | 字段说明        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------- |
-| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整数&emsp; | 广告ID |
+| id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 整数&nbsp;&nbsp; | 广告ID |
 | pay_for                                                      | 字符串                                                       | 结算方式CPM/CPC |
 | currency                                                     | 字符串                                                       | 结算货币        |
 | bid                                                          | 浮点数                                                       | 结算价格        |
@@ -254,7 +254,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 有效值 | 描述              | 备注         |
 | ------ | ----------------- | ------------ |
-| 1      &emsp;&emsp;&emsp;| Mobile / Tablet   | 优先采用4、5&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
+| 1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Mobile / Tablet   | 优先采用4、5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | 2      | Personal Computer |              |
 | 3      | Connected TV      |              |
 | 4      | Phone             |              |
@@ -266,7 +266,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 | 有效值                                                       | 描述                                  |
 | ------------------------------------------------------------ | ------------------------------------- |
-| 0 &emsp;&emsp;&emsp;| Unknown&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
+| 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Unknown&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | 1                                                            | Ethernet                              |
 | 2                                                            | WiFi                                  |
 | 3                                                            | Cellular Network - Unknown Generation |
