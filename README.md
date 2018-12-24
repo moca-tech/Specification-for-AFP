@@ -114,11 +114,13 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 4.1 响应对象
 
-| 字段名                                                       | 字段类型                      | 字段说明                          |
-| ------------------------------------------------------------ | ----------------------------- | --------------------------------- |
+undefined<style>table {width: 100%;}</style>
+
+| 字段名                                                  | 字段类型                                                     | 字段说明                                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 字符串&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 接口正确响应时为Ok，出错为Fail   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-| message                                                      | 字符串                        | 当接口出错时，message携带错误信息 |
-| data                                                         | plcmt对象数组, 字段名为plcmts |                                   |
+| message                                                 | 字符串                                                       | 当接口出错时，message携带错误信息                            |
+| data                                                    | plcmt对象数组, 字段名为plcmts                                |                                                              |
 
 4.2 plcmt对象信息
 
