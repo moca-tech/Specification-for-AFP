@@ -76,7 +76,7 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 #### 2.&nbsp;接口信息
 
 请求方法: GET
-请求地址: http://x.adstailor.com/v2/pfad/[publisher_key]/[inventory_id]
+请求地址: http://x.adstailor.com/pfad/[publisher_key]/[inventory_id]
 说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
 
 #### 3.&nbsp;请求参数
@@ -144,7 +144,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 #### 1.&nbsp;请求示例
 
-请求地址: http://x.adstailor.com/v2/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
+请求地址: http://x.adstailor.com/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
 
 #### 2.&nbsp;banner响应示例
 
