@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://moca-tech.net/">
-    <img src="./logo.png" alt="Bootstrap logo" width=72 height=72>
+    <img src="../logo.png" alt="Bootstrap logo" width=72 height=72>
   </a>
 
   <h3 align="center">Moca Tech</h3>
@@ -8,9 +8,9 @@
   <p align="center">
     Mobile Media Revolution.
     <br>
-    zh
+    <a href="github.com/moca-tech/Specification-for-AFP" target="_blank">zh</a>
     ·
-    <a href="github.com/moca-tech/Specification-for-AFP/tree/master/en" target="_blank">en</a>
+    en
     <br>
     <a href="http://www.moca-tech.net" target="_blank"><strong>More »</strong></a>
     <br>
@@ -25,24 +25,23 @@
 
 
 
-## 目录
+##  Contents
 
-- [前言](#前言)
-- [开始](#开始)
-- [接口定义](#接口定义)
-- [接口示例](#接口示例)
-- [附录](#附录)
+- [Introduction](#Introduction)
+- [Start](#Start)
+- [API](#API)
+- [Sample](#Sample)
+- [Appendix](#Appendix)
 
 
 
-## 前言
+## Introduction
 
-#### 1.&nbsp;目的
+#### 1.&nbsp;Purpose
 
-Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资源管理平台，帮助媒体 / 流量方便捷管理广告资源,通过结合品牌广告DSP, Adstailor AdExchange, 提高广告位填充率, 实现广告位收益最大化。
-该文档旨在帮助媒体 / 流量方对接AFP。
+Adstailor for Publishers(AFP) is managed Ad resource platform which is provided by Moca Technology, AFP helps media or publisher to manage their traffic conveniently. AFP also helps you to achieve the best Ad revenue via DSP (Demand-Side Platform), Adstailor AdExchange to increase the fill-rate. This guide is for media or publisher to integrate AFP.
 
-#### 2.&nbsp;参考协议
+#### 2.&nbsp;References Docuemnt
 
 1. [IAB VAST](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/)
 2. [OpenRTB](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)
@@ -51,101 +50,105 @@ Adstailor for Publishers(简称AFP), 是Moca Technology提供的品牌广告资�
 
 
 
-## 开始
+## Start
 
-#### 1.&nbsp;概念
+#### 1.&nbsp;Conception
 
-媒体 / 流量方(publisher): AFP唯一识别标识publisher_key, 用于api请求时标识身份。publisher_key在与Moca沟通后通过你的客户经理获取。
-
-广告位库存(inventory):AFP中指publisher所拥有的应用(app)或者站点(Site)。
-
-广告位(Placement): AFP中指广告投放的最小单元，可能是app或者site中的一个广告位。
-
-#### 2.&nbsp;申请成为adstailor流量合作伙伴
-
-访问moca-tech.net或者通过邮件business@moca-tech.net 联系我们,我们的商务经理会在第一时间协助你开通账户并接入AFP。
+Media / Publisher: AFP has unique identification “publisher_key” which is indicated whether advertising request is legitimate. “publisher_key” can be provided by our Business Department. 
+Inventory: Inventory means the Publisher own App or Website.
+Placement: AFP means the smallest advertising unit which is one of placement in App or Website.
 
 
-## 接口定义
+#### 2.&nbsp;Apply as an Adstailor partner
 
-#### 1.&nbsp;预拉取广告接口
+Contact us through visit moca-tech.net or email us ( business@moca-tech.net ). Our business manager will help you open an account and integrate our AFP immediately.
 
-当有广告展示请求时，客户端调用预拉取广告接口一次性获得一个或多个广告位(placement)的有效广告资源，预先下载广告素材。客户端须在广告有效展示截止时间内完成广告展示，并根据具体广告投放需求上报展示、点击、追踪事件以完成投放计数，从而获得收益。
 
-#### 2.&nbsp;接口信息
+## API
 
-请求方法: GET
-请求地址: http://x.adstailor.com/pfad/[publisher_key]/[inventory_id]
-说明: 媒体 / 流量方须将[publisher_key]替换为自己的publisher_key, [inventory_id]替换为广告位库存id, 接口编码方式为utf8,响应数据格式为json, 含响应头 Content-Type: application/json 。
+#### 1.&nbsp;Pre-Load Advertising Interface
 
-#### 3.&nbsp;请求参数
+The client will get one or more valid placement of advertising resource and pre-load the creative when requesting an ad through the interface. The client should complete display the creative within the deadline and report the impression, click and track event according to the concrete demand to complete the counting of the advertisement, so as to gain revenue.
 
-afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流量方的广告位不是以webview方式展示广告则需要上传设备信息等用户targeting参数。即使媒体 / 流量方的广告位是以webview方式展示广告, 也可以上传请求参数，修正设备信息。
+#### 2.&nbsp;Interface Information
 
-| 字段名         | 字段说明                                                     | 必要性      |
+Request Method: GET
+Request URI: http://x.adstailor.com/pfad/[publisher_key]/[inventory_id]
+[publisher_key]: You need to replace this parameter to your publisher_key.
+[inventory_id]: Replace it to ad inventory id.
+Encoding: UTF-8
+Response Format: JSON
+Content-Type: application/json
+
+
+#### 3.&nbsp;Request Parameter
+
+AFP get the user’s device information via User-Agent by default, if media or publisher is not displayed the ad in the webview, you have to upload the user’s device information as targeting parameter. Even though the media or publisher display the creative in the webview, you also can upload the request parameter to modify the device information.
+
+| Field         | Description                                                     | Optional      |
 | -------------- | ------------------------------------------------------------ | ----------- |
-| plcmt          | Ad Placement广告位, 多个广告位用半角逗号","分隔, 缺省表示该广告位库存下的所有广告位。广告位库存和广告位需要预先在AFP后台添加并设置有效。 | optional    |
-| w              | 广告位宽度修正值,当w / h都有值的时候生效, 覆盖原广告位宽高,仅此次生效, 当广告位类型为native时, w / h 只覆盖主图片的宽高, icon / logo 宽高比不变。 | optional    |
-| h              | 广告位高度修正值,当w / h都有值的时候生效, 覆盖原广告位宽高,仅此次生效, 当广告位类型为native时, w / h 只覆盖主图片的宽高, icon / logo 宽高比不变。 | optional    |
-| ua             | 用户的User-Agent                                             | recommended |
-| devicetype     | 用户设备类型, 枚举类型, 见附录A                              | recommended |
-| make           | 用户设备的制造商                                             | recommended |
-| model          | 用户的设备型号                                               | recommended |
-| os             | 用户设备的操作系统                                           | recommended |
-| osv            | 用户设备的操作系统版本号                                     | recommended |
-| hwv            | 用户设备的型号版本                                           | recommended |
-| language       | 设备语言, 请使用ISO-639-1-alpha-2标准                        | recommended |
-| carrier        | 设备的网络运营商                                             | recommended |
-| connectiontype | 设备的网络连接类型, 枚举类型, 参见附录B                      | recommended |
-| ip             | 设备ip地址, 缺省时尝试获取x-forwarded-for, remote_addr       | recommended |
-| lat            | Latitude 维度, 范围-90.0到+90.0                              | recommended |
-| lon            | Longitude 经度, 范围-180到+180                               | recommended |
-| yob            | 出生年份, 如1990                                             | optional    |
-| gender         | 用户性别, M代表male, F代表female, O代表第三性别, 不确定请缺省 | optional    |
-| keywords       | 关键词, 搜索、兴趣爱好、行为等关键词                         | optional    |
-| gaid           | Google Advertising ID 针对安卓设备                           | recommended |
-| idfa           | Advertising Identifier 针对iOS设备                           | recommended |
-| dpid           | Platform device ID 如Android ID                              | recommended |
-| did            | Hardware device ID 如IMEI                                    | optional    |
-| mac            | mac地址                                                      | optional    |
+| plcmt          | Ad Placement, multiple placements are separated by half angle comma. Inventory and placement need to be added and set up in AFP。 | optional    |
+| w              | Width of the placement, it will take effect only one time and cover original placement width and height when w/h has value. When the ad type is native, w/h value only modify the main picture’s width and height, and icon/ logo width-height ratio unchanged. | optional    |
+| h              | Height of the placement, it will take effect only one time and cover original placement width and height when w/h has value. When the ad type is native, w/h value only modify the main picture’s width and height, and icon/ logo width-height ratio unchanged. | optional    |
+| ua             | User-Agent                                             | recommended |
+| devicetype     | User device type, enumeration type. Please refer appendix A.                             | recommended |
+| make           | Device manufacturer.                                             | recommended |
+| model          | Device model.                                               | recommended |
+| os             | Device operation system.                                           | recommended |
+| osv            | Device operation system version.                                     | recommended |
+| hwv            | Hardware version of the device.                                           | recommended |
+| language       | Device language using IOS-639-1-alpha-2.                        | recommended |
+| carrier        | Device carrier or ISP.                                             | recommended |
+| connectiontype | Network connection type. Refer to appendix B.                      | recommended |
+| ip             | IPv4 address closest to device, if ip is null, please try to get it via x-forwarded-for, remote_addr.       | recommended |
+| lat            | Latitude from -90.0 to +90.0.                              | recommended |
+| lon            | Longitude from -180.0 to +180.0.                               | recommended |
+| yob            | Year of birth as a 4-digit integer.                                             | optional    |
+| gender         | Gender, where “M” = male, “F” = female, “O” = known to be other (i.e., omitted is unknown). | optional    |
+| keywords       | Comma separated list of keywords, interests, or intent.                         | optional    |
+| gaid           | Google Advertising ID.                            | recommended |
+| idfa           | Identifier for Advertising (IDFA) for iOS.                           | recommended |
+| dpid           | Platform device ID. (i.e.,Android ID)                              | recommended |
+| did            | Hardware device ID. (i.e., IMEI)                                    | optional    |
+| mac            | MAC address of the device                                                      | optional    |
 
-#### 4.&nbsp;响应信息
+#### 4.&nbsp;Response
 
-4.1 响应对象
+4.1 Response
 
-| 字段名                                                  | 字段类型                                                     | 字段说明                                                     |
+| Field                                                  | Type                                                     | Description                                                     |
 | ------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| status &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 字符串&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 接口正确响应时为Ok，出错为Fail   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-| message                                                 | 字符串                                                       | 当接口出错时，message携带错误信息                            |
-| data                                                    | plcmt对象数组, 字段名为plcmts                                |                                                              |
+| status &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | string&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Ok is interface response correctly, Fail is something wrong.   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| message                                                 | string                                                       | When interface response fail, message carries the error information.                            |
+| data                                                    | plcmt object array name plcmts                                |                                                              |
 
-4.2 plcmt对象信息
+4.2 plcmt Object Information
 
-| 字段名                                                       | 字段类型                                                     | 字段说明           |
+| Field                                                       | Type                                                     | Description           |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------ |
-| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 整型&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; | placement 广告位ID&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; |
-| ads                                                          | ad对象数组                                                   |                    |
+| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | integer&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; | Placement ID&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| ads                                                          | Ad object array                                                   |                    |
 
-4.3 ad对象
+4.3 ad Object
 
-| 字段名                                                       | 字段类型                                                     | 字段说明        |
+| Field                                                       | Type                                                     | Description        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------- |
-| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 字符串 | 广告ID |
-| pay_for                                                      | 字符串                                                       | 结算方式CPM/CPC |
-| currency                                                     | 字符串                                                       | 结算货币        |
-| bid                                                          | 浮点数                                                       | 结算价格        |
-| expires                                                      | 整数                                                         | 过期时间戳      |
-| adm                                                          | 当广告类型为video时为VAST xml, 详情请参考 [IAB VAST协议](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/); 当广告类型为banner时为html TAG; 当广告类型为native时为native对象, 详情请参考[IAB OpenRTB Native Ad v1.0协议](https://github.com/openrtb/OpenRTB/blob/76a6d25c74a0cc8f15b119549257856acfc62246/OpenRTB-Native-Ads-Specification-1_0-Final.pdf)。 | 广告素材        |
+| id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | String | ADID |
+| pay_for                                                      | String                                                       | Settlement (CPM/CPC) |
+| currency                                                     | String                                                       | Settlement currency        |
+| bid                                                          | float number                                                       | Settlement price        |
+| expires                                                      | integer                                                         | expire timestamp      |
+| adm                                                          | When the ad type is video, it is VAST xml. For details, please refer to [IAB VAST Protocol](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast/); When the ad type is banner, it is html tag. When the ad type is native, it is native object. For details, please refer to [IAB OpenRTB Native Ad v1.0 Protocol](https://github.com/openrtb/OpenRTB/blob/76a6d25c74a0cc8f15b119549257856acfc62246/OpenRTB-Native-Ads-Specification-1_0-Final.pdf)。 | Ad Creative        |
 
 
 
-## 接口示例
+## Sample
 
-#### 1.&nbsp;请求示例
+#### 1.&nbsp;Request Sample
 
-请求地址: http://x.adstailor.com/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
+Request URI: http://x.adstailor.com/pfad/[publisher_token]/[inventory_id]?plcmt=101,102&w=720&h=1280
 
-#### 2.&nbsp;banner响应示例
+#### 2.&nbsp;Banner Response Sample
 
 ```json
 {
@@ -170,7 +173,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 }
 ```
 
-#### 3.&nbsp;native响应示例
+#### 3.&nbsp;Native Response Sample
 
 ```json
 {
@@ -218,7 +221,7 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 }
 ```
 
-#### 4.&nbsp;video响应示例
+#### 4.&nbsp;Video Response Sample
 
 ```json
 {
@@ -247,13 +250,13 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 
 
 
-## 附录
+## Appendix
 
-#### 1.&nbsp;device type 设备类型说明
+#### 1.&nbsp;Device Type Explanation
 
-| 有效值 | 描述              | 备注         |
+| Valid Value | Description              | Remarks         |
 | ------ | ----------------- | ------------ |
-| 1      &emsp;&emsp;&emsp;| Mobile / Tablet   | 优先采用4、5&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
+| 1      &emsp;&emsp;&emsp;| Mobile / Tablet   | Priority use 4、5&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
 | 2      | Personal Computer |              |
 | 3      | Connected TV      |              |
 | 4      | Phone             |              |
@@ -261,9 +264,9 @@ afp平台默认会从用户的User-Agent获取设备信息, 如果媒体 / 流�
 | 6      | Connected Device  |              |
 | 7      | Set Top Box       |              |
 
-#### 2.&nbsp;connection type数据连接类型说明
+#### 2.&nbsp;Connection Type Description
 
-| 有效值                                                       | 描述                                  |
+| Valid Value                                                       | Description                                  |
 | ------------------------------------------------------------ | ------------------------------------- |
 | 0 &emsp;&emsp;&emsp;| Unknown&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
 | 1                                                            | Ethernet                              |
