@@ -8,7 +8,7 @@
   <p align="center">
     Mobile Media Revolution.
     <br>
-    <a href="github.com/moca-tech/Specification-for-AFP" target="_blank">zh</a>
+    <a href="https://github.com/moca-tech/Specification-for-AFP" target="_blank">zh</a>
     ·
     en
     <br>
