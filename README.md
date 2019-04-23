@@ -10,7 +10,7 @@
     <br>
     zh
     ·
-    <a href="github.com/moca-tech/Specification-for-AFP/tree/master/en" target="_blank">en</a>
+    <a href="https://github.com/moca-tech/Specification-for-AFP/tree/master/en" target="_blank">en</a>
     <br>
     <a href="http://www.moca-tech.net" target="_blank"><strong>More »</strong></a>
     <br>
