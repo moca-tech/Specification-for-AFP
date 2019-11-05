@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://moca-tech.net/">
-    <img src="./logo.png" alt="Bootstrap logo" width=72 height=72>
+    <img src="./logo.png" alt="AFP" width=72 height=72>
   </a>
 
   <h3 align="center">Moca Tech</h3>
