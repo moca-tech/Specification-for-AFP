@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://moca-tech.net/">
-    <img src="http://cactiflos.s3-ap-southeast-1.amazonaws.com/cactiflos.jpg" alt="AFP" width=72 height=72>
+    <img src="https://www.moca-tech.net/logo.png" alt="AFP" height=72>
   </a>
 
   <h3 align="center">Moca Tech</h3>
